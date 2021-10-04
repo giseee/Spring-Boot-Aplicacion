@@ -1,6 +1,6 @@
 package com.example.geograficos.dto;
 
-public class CiudadPaisDto {
+public class PaisDto {
     private String imagen;
     private String denominacion;
     private int cantidadHabitantes;

@@ -1,10 +1,16 @@
 package com.example.geograficos.model;
-import javax.persistence.*;
-import java.util.List;
+import lombok.*;
 
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.List;
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 @Table(name="continentes")
-public class Continente {
+public class ContinenteEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_continente")
@@ -14,29 +20,7 @@ public class Continente {
     @Column
     private String denominacion;
     @OneToMany(mappedBy = "continente")
-    private  List<PaisEntity> ciudades;
+    private  List<PaisEntity> paises;
 
-    public String getDenominacion() {
-        return denominacion;
-    }
 
-    public void setDenominacion(String denominacion) {
-        this.denominacion = denominacion;
-    }
-
-    public String getImagen() {
-        return imagen;
-    }
-
-    public void setImagen(String imagen) {
-        this.imagen = imagen;
-    }
-
-    public Long getIdContinente() {
-        return idContinente;
-    }
-
-    public void setIdContinente(Long idContinente) {
-        this.idContinente = idContinente;
-    }
 }

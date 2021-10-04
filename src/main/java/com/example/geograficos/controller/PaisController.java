@@ -1,4 +1,4 @@
 package com.example.geograficos.controller;
 
-public class CiudadPaisController {
+public class PaisController {
 }
